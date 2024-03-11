@@ -7,10 +7,10 @@ import "./style.scss";
 const Slider = () => {
     const { data } = useData();
     const [index, setIndex] = useState(0);
+    // trie les éléments de l'array (stocké dans data) par ordre décroissant de date
     const byDateDesc = data?.focus.sort((evtA, evtB) =>
         new Date(evtA.date) < new Date(evtB.date) ? 1 : -1
     );
-
     // Ajout de -1 sur byDateDesc.length pour que la condition s'applique une fois sur la dernière image du slider
     const nextCard = () => {
         if (byDateDesc && byDateDesc.length > 0) {
