@@ -16,14 +16,14 @@ const EventList = () => {
 
     // Filtre les événements en fonction du type sélectionné
     const filteredEvents = type
-        ? data?.events.filter((event) => event.type === type)
-        : data?.events || [];
+        ? data?.events.filter((event) => event.type === type) // Si un type est sélectionné, filtre les événements ayant ce type
+        : data?.events || []; // Sinon, si aucun type n'est sélectionné ou si les données sont null/undefined, initialise filteredEvents avec un tableau vide
 
-    // Pagination des événements
+    // Pagination des événements filtrés
     const paginatedEvents = filteredEvents.filter(
         (event, index) =>
-            (currentPage - 1) * PER_PAGE <= index &&
-            index < currentPage * PER_PAGE
+            (currentPage - 1) * PER_PAGE <= index && // Vérifie si l'index de l'événement est supérieur ou égal à l'index de début de page
+            index < currentPage * PER_PAGE // Vérifie si l'index de l'événement est inférieur à l'index de fin de page
     );
 
     const changeType = (evtType) => {

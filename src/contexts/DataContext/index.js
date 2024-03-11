@@ -35,8 +35,8 @@ export const DataProvider = ({ children }) => {
         }
 
         const dataCopy = [...data.events]; // copie de data.events, pour classer du plus au moins récent
-        dataCopy.sort((a, b) => (a.date < b.date ? 1 : -1));
-        setLast(dataCopy[0]); // set du state last avec l'event le plus récent du tableau dataCopy
+        dataCopy.sort((a, b) => (a.date < b.date ? 1 : -1)); // Tri du tableau dataCopy par date du plus au moins récent
+        setLast(dataCopy[0]); // set du state last avec l'event le plus récent du tableau dataCopy pour la prestation
     }, [data, getData]); // appel du hook useEffect à chaque modification de data ou getData
 
     return (

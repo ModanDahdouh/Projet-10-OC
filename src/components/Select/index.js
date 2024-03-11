@@ -13,8 +13,8 @@ const Select = ({
     label,
     type = "normal",
 }) => {
-    const [value, setValue] = useState(true);
-    const [collapsed, setCollapsed] = useState(true);
+    const [value, setValue] = useState(false); // ajout false pour ajoute la categorie par default
+    const [collapsed, setCollapsed] = useState(true); // ajout true pour fermer la liste par defaut
     // Fonction pour mettre à jour la valeur sélectionnée et gérer la visibilité de la liste déroulante
     const changeValue = (newValue) => {
         onChange(newValue); // Appel de la fonction onChange avec la nouvelle valeur
