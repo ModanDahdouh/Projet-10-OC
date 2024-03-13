@@ -30,7 +30,8 @@ const EventList = () => {
         setCurrentPage(1);
         setType(evtType);
     };
-    const pageNumber = Math.floor((filteredEvents?.length || 0) / PER_PAGE) + 1;
+
+    const pageNumber = Math.floor((filteredEvents?.length || 0) / PER_PAGE); // jais enlever le +1 pour avoir le nombre de page complet
     const typeList = new Set(data?.events.map((event) => event.type));
 
     return (
